@@ -1,0 +1,20 @@
+{
+  "name": "my-graphql-mongodb",
+  "version": "1.0.0",
+  "description": "my sample to practice GraphQL,MongoDB and ES6",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chen Wang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "lodash": "^4.17.11",
+    "mongoose": "^8.0.0"
+  }
+}
