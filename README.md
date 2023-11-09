@@ -92,7 +92,7 @@ This sample NodeJs application uses GraphQL and MongoDB. I did little bit more w
 }
 
 ```
-- Blogs document lives along in MongoDB. The field posted_at is Date type in DB. Query output and mutation addBlog input use format 'yyyy-mm-dd'. Conversion is added into Type and Model to support this.
+- Blogs document lives alone in MongoDB. The field posted_at is Date type in DB. Query output and mutation addBlog input use format 'yyyy-mm-dd'. Conversion is added into Type and Model to support this.
 
 ```
 --
