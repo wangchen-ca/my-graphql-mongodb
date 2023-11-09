@@ -153,5 +153,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-I use MongoDB Atlas cloud service to run the application. The file of my user id and password file is not committed. To run in your local host you need to add your own file of and replace with your own MongoDB connection url. You can use mutation in browser to add or query data.
+browser @ http://localhost:4000/graphql
+
+I use MongoDB Atlas cloud service to run the application at my local. The file creadential.js, containing my user id and password,  is not committed. To run from your local host you need to add your own creadential.js and replace with your own MongoDB connection url in app.js. Once started, you can use mutation/add or query data from MongoDB in browser.
 
