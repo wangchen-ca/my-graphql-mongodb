@@ -4,10 +4,12 @@
 import Author from "../../model/Author.js";
 import Book from "../../model/Book.js";
 import Blog from "../../model/Blog.js";
+import Candidate from "../../model/Candidate.js";
 
 import AuthorType from "../type/AuthorType.js";
 import BookType from "../type/BookType.js";
 import { DateType, BlogType }  from "../type/BlogType.js";
+import CandidateType from "../type/CandidateType.js";
 
 import { GraphQLObjectType, GraphQLList, GraphQLID } from "graphql";
 
@@ -57,6 +59,24 @@ const RootQuery = new GraphQLObjectType({
         return Blog.find({});
       },
     },
+    candidate: {
+      type: CandidateType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        // Implement a resolver function to fetch a single candidate by ID
+        return Candidate.findById(args.id);
+      },
+    },
+    candidates: {
+      type: new GraphQLList(CandidateType),
+      resolve(parent, args) {
+        // Implement a resolver function to fetch all candidates
+        return Candidate.find({});
+      },
+    },
+
+
+
   },
 });
 

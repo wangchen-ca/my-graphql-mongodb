@@ -9,12 +9,14 @@ import {
 } from "graphql";
 import AuthorType from "../type/AuthorType.js";
 import BookType from "../type/BookType.js";
-import { DateType, BlogType }  from "../type/BlogType.js";
+import { DateType, BlogType } from "../type/BlogType.js";
+import CandidateType from "../type/CandidateType.js";
 
 // Import your Mongoose model
 import Author from "../../model/Author.js";
 import Book from "../../model/Book.js";
 import Blog from "../../model/Blog.js";
+import Candidate from "../../model/Candidate.js";
 
 const RootMutation = new GraphQLObjectType({
   name: "RootMutationType",
@@ -72,6 +74,21 @@ const RootMutation = new GraphQLObjectType({
           posted_at: args.posted_at,
         });
         return blog.save();
+      },
+    },
+
+    addCandidate: {
+      type: CandidateType,
+      args: {
+        name: { type: GraphQLString },
+        type: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        let candidate = new Candidate({
+          name: args.name,
+          type: args.type,
+        });
+        return candidate.save();
       },
     },
   },

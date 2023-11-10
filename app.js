@@ -1,5 +1,6 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
+import cors from 'cors'; 
 import  schema  from './schema/index.js';
 import mongoose from 'mongoose';
 import credentials from './credentials.js';
@@ -20,6 +21,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
     console.log('connected to database');
 });
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('GraphQL is amazing!');
